@@ -31,9 +31,9 @@
                         {{ $header }}
                     </div>
                 </header>
-            @endif
+        @endif
 
-            <!-- Page Content -->
+        <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
