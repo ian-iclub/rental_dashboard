@@ -1,36 +1,56 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.auth-base')
 
-        <x-jet-validation-errors class="mb-4" />
+@section('title', 'Reset Password')
 
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
+@section('content')
 
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-            <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
+         style="background:url({{ asset('images/auth/bg.jpg') }}) no-repeat center center;">
+        <div class="auth-box row">
+            <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url({{ asset('images/auth/forgot-password-form.png') }});">
             </div>
+            <div class="col-lg-5 col-md-7 bg-white">
+                <div class="p-3">
+                    <div class="text-center">
+                        <img src="{{ asset('images/auth/forgot-password-form-top.png') }}" alt="login" style="width: 60px">
+                    </div>
+                    <p class="text-center mt-3">Reset your password</p>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
+                    <form class="mt-4" method="POST" action="{{ route('password.update') }}">
+                        @csrf
 
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
+                        <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Reset Password') }}
-                </x-jet-button>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="text-dark" for="email">Email</label>
+                                    <input class="form-control" id="email" type="email" name="email" value="{{ old('email', $request->email) }}" required autofocus>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="text-dark" for="pwd">Password</label>
+                                    <input class="form-control" id="pwd" type="password" name="password" required autocomplete="new-password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="text-dark" for="c_pwd">Confirm Password</label>
+                                    <input class="form-control" id="c_pwd" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button type="submit" class="btn btn-block btn-primary">Reset Password</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+
+@endsection
+
+
+
