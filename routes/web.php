@@ -2,9 +2,16 @@
 
 use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepositController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\RefereeController;
+use App\Http\Controllers\RentPaymentController;
+use App\Http\Controllers\TenantApplicationController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\TenantMateController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WaterPaymentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -52,9 +59,28 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'as' => 'admin.'], f
     # 3. TENANT MATES
     Route::resource('tenant_mates', TenantMateController::class);
 
-    # 4. APARTMENTS
+    # 4. REFEREES
+    Route::resource('referees', RefereeController::class);
+
+    # 5. EMPLOYERS
+    Route::resource('employers', EmployerController::class);
+
+    # 6. APARTMENTS
     Route::resource('apartments', ApartmentController::class);
 
+    # 7. DEPOSITS
+    Route::resource('deposits', DepositController::class);
 
+    # 8. RENT PAYMENTS
+    Route::resource('rent_payments', RentPaymentController::class);
+
+    # 9. WATER PAYMENTS
+    Route::resource('water_payments', WaterPaymentController::class);
+
+    # 10. DOCUMENTS
+    Route::resource('documents', DocumentController::class);
+
+    # 11. TENANT APPLICATIONS
+    Route::resource('applications', TenantApplicationController::class);
 
 });

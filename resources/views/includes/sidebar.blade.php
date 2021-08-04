@@ -35,22 +35,10 @@
 
                 <!-- Tenants -->
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                    <a href="{{ route('admin.tenants.index') }}" class="sidebar-link" aria-expanded="false">
                         <i class="fas fa-users"></i>
                         <span class="hide-menu">Tenants</span>
                     </a>
-                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item">
-                            <a href="{{ route('admin.tenants.index') }}" class="sidebar-link">
-                                <span class="hide-menu">View all</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{{ route('admin.tenants.create') }}" class="sidebar-link">
-                                <span class="hide-menu">New Tenant</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <!-- Tenant Mates -->
@@ -60,6 +48,7 @@
                         <span class="hide-menu">Tenant Mates</span>
                     </a>
                 </li>
+
 
                 <li class="list-divider"></li>
 
@@ -71,6 +60,49 @@
                         <span class="hide-menu">Apartments</span>
                     </a>
                 </li>
+
+                <li class="list-divider"></li>
+
+                <!-- PAYMENTS RELATED -->
+                <li class="nav-small-cap"><span class="hide-menu">Payments</span></li>
+
+                <!-- Deposits -->
+                <li class="sidebar-item">
+                    <a href=" {{ route('admin.rent_payments.index') }} " class="sidebar-link" aria-expanded="false">
+                        <i class="fas fa-piggy-bank"></i>
+                        <span class="hide-menu">Deposits</span>
+                    </a>
+                </li>
+
+                <!-- Rent -->
+                <li class="sidebar-item">
+                    <a href=" {{ route('admin.rent_payments.index') }} " class="sidebar-link" aria-expanded="false">
+                        <i class="fas fa-money-bill-alt"></i>
+                        <span class="hide-menu">Rent Payments</span>
+                    </a>
+                </li>
+
+                <!-- Water -->
+                <li class="sidebar-item">
+                <a href=" {{ route('admin.water_payments.index') }} " class="sidebar-link" aria-expanded="false">
+                    <i class="fas fa-warehouse"></i>
+                    <span class="hide-menu">Water Payments</span>
+                </a>
+                </li>
+
+                <li class="list-divider"></li>
+
+                <!-- DOCUMENTATION RELATED -->
+                <li class="nav-small-cap"><span class="hide-menu">Documentation</span></li>
+
+                <!-- Documents -->
+                <li class="sidebar-item">
+                    <a href=" {{ route('admin.documents.index') }} " class="sidebar-link" aria-expanded="false">
+                        <i class="fas fa-folder"></i>
+                        <span class="hide-menu">Documents</span>
+                    </a>
+                </li>
+
 
             </ul>
         </nav>
