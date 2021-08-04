@@ -17,8 +17,8 @@
 
                 <li class="list-divider"></li>
 
-                <!-- MANAGE THIS PLATFORM -->
-                <li class="nav-small-cap"><span class="hide-menu">MANAGE THIS PLATFORM</span></li>
+                <!-- MANAGEMENT -->
+                <li class="nav-small-cap"><span class="hide-menu">MANAGEMENT</span></li>
 
                 <!-- Tenant Mates -->
                 <li class="sidebar-item">
@@ -41,7 +41,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href=" {{ route('admin.tenants.index') }}" class="sidebar-link">
                                 <span class="hide-menu">View all</span>
                             </a>
                         </li>

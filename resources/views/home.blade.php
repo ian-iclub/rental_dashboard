@@ -2,7 +2,9 @@
 
 @section('title', 'Home')
 
-@section('page', 'Dashboard')
+@section('pageTitle', 'Dashboard')
+
+@section('pageUrl', 'Dashboard')
 
 @section('content')
 

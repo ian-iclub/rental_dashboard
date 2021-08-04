@@ -25,7 +25,7 @@ class TenantController extends Controller
     {
         $tenants = Tenant::all();
 
-        return view('', compact('tenants'));
+        return view('admin.tenants.index', compact('tenants'));
     }
 
     /**
@@ -35,7 +35,7 @@ class TenantController extends Controller
      */
     public function create()
     {
-        return view();
+        return view('admin.tenants.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class TenantController extends Controller
             session()->flash('error', 'Error while saving. Kindly try again');
         }
 
-        return view();
+        return view('admin.tenants.index');
     }
 
     /**
@@ -86,7 +86,7 @@ class TenantController extends Controller
      */
     public function show(Tenant $tenant)
     {
-        return view('', compact('tenant'));
+        return view('admin.tenants.show', compact('tenant'));
     }
 
     /**
@@ -97,7 +97,7 @@ class TenantController extends Controller
      */
     public function edit(Tenant $tenant)
     {
-        return view('', compact('tenant'));
+        return view('admin.tenants.edit', compact('tenant'));
     }
 
     /**
@@ -134,7 +134,7 @@ class TenantController extends Controller
             session()->flash('error', 'Error while updating details. Kindly try again');
         }
 
-        return view();
+        return view('admin.tenants.index');
     }
 
     /**
@@ -163,6 +163,6 @@ class TenantController extends Controller
             session()->flash('error', 'Error while deleting. Kindly try again');
         }
 
-        return view('');
+        return view('admin.tenants.index');
     }
 }

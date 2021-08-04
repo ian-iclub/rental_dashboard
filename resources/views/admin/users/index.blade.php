@@ -2,7 +2,9 @@
 
 @section('title', 'Users')
 
-@section('page', 'Users')
+@section('pageTitle', 'Users')
+
+@section('pageUrl', 'Users')
 
 @section('content')
     <div class="row">
@@ -49,14 +51,6 @@
 
                             @endforeach
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Verify</th>
-                                    <th>Delete Account</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>
