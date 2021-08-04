@@ -17,6 +17,19 @@
 
                 <li class="list-divider"></li>
 
+                <!-- MANAGE THIS PLATFORM -->
+                <li class="nav-small-cap"><span class="hide-menu">MANAGE THIS PLATFORM</span></li>
+
+                <!-- Tenant Mates -->
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.users') }}" class="sidebar-link" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i>
+                        <span class="hide-menu">User Accounts</span>
+                    </a>
+                </li>
+
+                <li class="list-divider"></li>
+
                 <!-- PEOPLE RELATED -->
                 <li class="nav-small-cap"><span class="hide-menu">PEOPLE</span></li>
 

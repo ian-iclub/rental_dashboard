@@ -6,6 +6,7 @@
 <script src="{{ asset('js/feather.min.js') }}"></script>
 <script src="{{ asset('libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
 <script src="{{ asset('js/sidebarmenu.js') }}"></script>
+<script src="{{ asset('libs/extra-libs/sparkline/sparkline.js') }}"></script>
 
 <!--Custom JavaScript -->
 <script src="{{ asset('js/custom.min.js') }}"></script>
@@ -18,3 +19,7 @@
 <script src="{{ asset('libs/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
 <script src="{{ asset('libs/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
 <script src="{{ asset('js/pages/dashboards/dashboard1.min.js') }}"></script>
+
+{{-- User Accounts Page Scripts --}}
+<script src="{{ asset('libs/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/pages/datatable/datatable-basic.init.js') }}"></script>

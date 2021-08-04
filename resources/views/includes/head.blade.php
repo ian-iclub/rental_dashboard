@@ -8,12 +8,14 @@
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
 
+{{-- Data tables --}}
+<link href="{{ 'libs/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css' }}" rel="stylesheet">
+
 <!-- Custom CSS -->
 <link href="{{ asset('libs/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
 <link href="{{ asset('libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
 <link href="{{ asset('libs/extra-libs/jvector/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
 <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
-
 
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}" defer></script>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,16 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'as' => 'admin.'], f
 
     # Home page
     Route::get('/home', [DashboardController::class, 'home'])->name('home');
+
+    # 1. USERS
+
+    # User accounts
+    Route::get('/users', [UserController::class, 'index'])->name('users');
+
+    # Verify user account
+    Route::post('/verify/user/{user}', [UserController::class, 'verifyUser'])->name('verifyUser');
+
+    # Delete user account
+    Route::delete('/delete/user/{user}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
 });
