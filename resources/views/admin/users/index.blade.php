@@ -1,8 +1,8 @@
 @extends('layouts.base')
 
-@section('title', 'Users')
+@section('title', 'Users: All')
 
-@section('pageTitle', 'Users')
+@section('pageTitle', 'All Users')
 
 @section('pageUrl', 'Users')
 

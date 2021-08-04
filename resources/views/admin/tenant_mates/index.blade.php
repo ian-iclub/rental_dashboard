@@ -1,10 +1,10 @@
 @extends('layouts.base')
 
-@section('title', 'Tenants')
+@section('title', 'Tenants Mates: All')
 
-@section('pageTitle', 'Tenants')
+@section('pageTitle', 'All Tenants Mates')
 
-@section('pageUrl', 'Tenants')
+@section('pageUrl', 'People')
 
 @section('content')
     <div class="row">
