@@ -66,22 +66,10 @@
                 <!-- PROPERTY RELATED -->
                 <li class="nav-small-cap"><span class="hide-menu">Property</span></li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                    <a href=" {{ route('admin.apartments.index') }} " class="sidebar-link" aria-expanded="false">
                         <i class="fas fa-building"></i>
                         <span class="hide-menu">Apartments</span>
                     </a>
-                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
-                                <span class="hide-menu">View all</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
-                                <span class="hide-menu">New Inputs</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
             </ul>

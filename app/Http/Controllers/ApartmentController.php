@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 
@@ -22,7 +23,7 @@ class ApartmentController extends Controller
     {
         $apartments = Apartment::all();
 
-        return view('', compact('apartments'));
+        return view('admin.apartments.index', compact('apartments'));
     }
 
     /**
@@ -32,16 +33,16 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view();
+        return view('admin.apartments.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param ApartmentStoreRequest $request
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function store(ApartmentStoreRequest $request)
+    public function store(ApartmentStoreRequest $request): RedirectResponse
     {
         try
         {
@@ -69,7 +70,7 @@ class ApartmentController extends Controller
             session()->flash('error', 'Error while saving. Kindly try again');
         }
 
-        return view();
+        return redirect()->route('admin.apartments.index');
     }
 
     /**
@@ -80,7 +81,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('', compact('apartment'));
+        return view('admin.apartments.show', compact('apartment'));
     }
 
     /**
@@ -91,7 +92,7 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        return view('', compact('apartment'));
+        return view('admin.apartments.edit', compact('apartment'));
     }
 
     /**
@@ -99,9 +100,9 @@ class ApartmentController extends Controller
      *
      * @param Request $request
      * @param Apartment $apartment
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function update(Request $request, Apartment $apartment)
+    public function update(Request $request, Apartment $apartment): RedirectResponse
     {
         try
         {
@@ -129,16 +130,16 @@ class ApartmentController extends Controller
             session()->flash('error', 'Error while updating details. Kindly try again');
         }
 
-        return view('');
+        return redirect()->route('admin.apartments.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Apartment $apartment
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function destroy(Apartment $apartment)
+    public function destroy(Apartment $apartment): RedirectResponse
     {
         try
         {
@@ -158,6 +159,6 @@ class ApartmentController extends Controller
             session()->flash('error', 'Error while deleting. Kindly try again');
         }
 
-        return view('');
+        return redirect()->route('admin.apartments.index');
     }
 }

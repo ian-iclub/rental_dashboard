@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\TenantMateController;
@@ -48,7 +49,11 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'], 'as' => 'admin.'], f
     # 2. TENANTS
     Route::resource('tenants', TenantController::class);
 
+    # 3. TENANT MATES
     Route::resource('tenant_mates', TenantMateController::class);
+
+    # 4. APARTMENTS
+    Route::resource('apartments', ApartmentController::class);
 
 
 
