@@ -41,12 +41,12 @@
                     </a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href=" {{ route('admin.tenants.index') }}" class="sidebar-link">
+                            <a href="{{ route('admin.tenants.index') }}" class="sidebar-link">
                                 <span class="hide-menu">View all</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
+                            <a href="{{ route('admin.tenants.create') }}" class="sidebar-link">
                                 <span class="hide-menu">New Tenant</span>
                             </a>
                         </li>
@@ -55,7 +55,7 @@
 
                 <!-- Tenant Mates -->
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" aria-expanded="false">
+                    <a href=" {{ route('admin.tenant_mates.index') }} " class="sidebar-link" aria-expanded="false">
                         <i class="fas fa-people-carry"></i>
                         <span class="hide-menu">Tenant Mates</span>
                     </a>

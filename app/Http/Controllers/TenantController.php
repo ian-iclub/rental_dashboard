@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
@@ -42,9 +43,9 @@ class TenantController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  TenantStoreRequest  $request
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function store(TenantStoreRequest $request)
+    public function store(TenantStoreRequest $request): RedirectResponse
     {
         try
         {
@@ -75,7 +76,7 @@ class TenantController extends Controller
             session()->flash('error', 'Error while saving. Kindly try again');
         }
 
-        return view('admin.tenants.index');
+        return redirect()->route('admin.tenants.index');
     }
 
     /**
@@ -105,9 +106,9 @@ class TenantController extends Controller
      *
      * @param Request $request
      * @param Tenant $tenant
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function update(Request $request, Tenant $tenant)
+    public function update(Request $request, Tenant $tenant): RedirectResponse
     {
         try
         {
@@ -134,16 +135,16 @@ class TenantController extends Controller
             session()->flash('error', 'Error while updating details. Kindly try again');
         }
 
-        return view('admin.tenants.index');
+        return redirect()->route('admin.tenants.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Tenant $tenant
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function destroy(Tenant $tenant)
+    public function destroy(Tenant $tenant): RedirectResponse
     {
         try
         {
@@ -163,6 +164,6 @@ class TenantController extends Controller
             session()->flash('error', 'Error while deleting. Kindly try again');
         }
 
-        return view('admin.tenants.index');
+        return redirect()->route('admin.tenants.index');
     }
 }

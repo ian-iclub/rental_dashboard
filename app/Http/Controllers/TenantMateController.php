@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -24,7 +25,7 @@ class TenantMateController extends Controller
     {
         $tenant_mates = TenantMate::all();
 
-        return view('', compact('tenant_mates'));
+        return view('admin.tenant_mates.index', compact('tenant_mates'));
     }
     /**
      * Show the form for creating a new resource.
@@ -33,16 +34,16 @@ class TenantMateController extends Controller
      */
     public function create()
     {
-        return view();
+        return view('admin.tenant_mates.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param TenantMateStoreRequest $request
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function store(TenantMateStoreRequest $request)
+    public function store(TenantMateStoreRequest $request): RedirectResponse
     {
         try
         {
@@ -68,7 +69,7 @@ class TenantMateController extends Controller
             session()->flash('error', 'Error while saving. Kindly try again');
         }
 
-        return view();
+        return redirect()->route('admin.tenant_mates.index');
     }
 
     /**
@@ -79,7 +80,7 @@ class TenantMateController extends Controller
      */
     public function show(TenantMate $tenant_mate)
     {
-        return view('', compact('tenant_mate'));
+        return view('admin.tenant_mates.show', compact('tenant_mate'));
     }
 
     /**
@@ -90,7 +91,7 @@ class TenantMateController extends Controller
      */
     public function edit(TenantMate $tenant_mate)
     {
-        return view('', compact('tenant_mate'));
+        return view('admin.tenant_mates.edit', compact('tenant_mate'));
     }
 
     /**
@@ -98,7 +99,7 @@ class TenantMateController extends Controller
      *
      * @param Request $request
      * @param TenantMate $tenant_mate
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
     public function update(Request $request, TenantMate $tenant_mate)
     {
@@ -122,16 +123,16 @@ class TenantMateController extends Controller
             session()->flash('error', 'Error while updating details. Kindly try again');
         }
 
-        return view();
+        return redirect()->route('admin.tenant_mates.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param TenantMate $tenant_mate
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function destroy(TenantMate $tenant_mate)
+    public function destroy(TenantMate $tenant_mate): RedirectResponse
     {
         try
         {
@@ -151,6 +152,6 @@ class TenantMateController extends Controller
             session()->flash('error', 'Error while deleting. Kindly try again');
         }
 
-        return view('');
+        return redirect()->route('admin.tenant_mates.index');
     }
 }
