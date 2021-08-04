@@ -15,6 +15,8 @@
 
             @include('includes.preloader')
 
+            @include('includes.flash')
+
             @yield('content')
 
         </div>

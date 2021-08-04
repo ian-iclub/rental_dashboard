@@ -24,6 +24,8 @@
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-menu')
 
+            @include('includes.flash')
+
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
